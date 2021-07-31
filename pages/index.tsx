@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Tab } from "@headlessui/react";
+import { AnimateSharedLayout } from "framer-motion";
 import { FancyTab } from "../components/fancy-tab";
 
 export default function Home() {
@@ -14,18 +15,20 @@ export default function Home() {
         <Tab.Group as="div" className="relative">
           <div className="absolute top-0 left-0 right-0 h-[1px] w-full bg-gradient-to-r from-transparent via-gray-700 to-transparent pointer-events-none"></div>
           <Tab.List className="flex items-center justify-between relative">
-            <FancyTab accentColor="#ef4444" id="tab-home">
-              Home
-            </FancyTab>
-            <FancyTab accentColor="#a78bfa" id="tab-2">
-              About
-            </FancyTab>
-            <FancyTab accentColor="#6ee7b7" id="tab-3">
-              Pricing
-            </FancyTab>
-            <FancyTab accentColor="#60a5fa" id="tab-4">
-              Contact
-            </FancyTab>
+            <AnimateSharedLayout>
+              <FancyTab accentColor="#ef4444" id="tab-home">
+                Home
+              </FancyTab>
+              <FancyTab accentColor="#a78bfa" id="tab-2">
+                About
+              </FancyTab>
+              <FancyTab accentColor="#6ee7b7" id="tab-3">
+                Pricing
+              </FancyTab>
+              <FancyTab accentColor="#60a5fa" id="tab-4">
+                Contact
+              </FancyTab>
+            </AnimateSharedLayout>
           </Tab.List>
           <Tab.Panels>
             <Tab.Panel></Tab.Panel>

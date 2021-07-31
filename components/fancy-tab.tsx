@@ -20,7 +20,17 @@ export function FancyTab({ children, id, accentColor }: FancyTabProps) {
           ])}
         >
           {children}
-
+          {selected && (
+            <motion.div
+              className="w-full absolute left-0 right-0 z-10 rounded-full h-[2px] top-0"
+              layoutId="underline"
+              initial={false}
+              animate={{
+                background: accentColor,
+                boxShadow: `0 14px 30px 1px ${accentColor}, 0 4px 12px ${accentColor}, 0 1px 7px ${accentColor}`,
+              }}
+            />
+          )}
           <AnimatePresence>
             {selected && (
               <motion.div
@@ -65,21 +75,7 @@ export function FancyTab({ children, id, accentColor }: FancyTabProps) {
               </motion.div>
             )}
           </AnimatePresence>
-          <AnimatePresence>
-            {selected && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="absolute inset-0 w-full h-[2px] pointer-events-none"
-                style={{
-                  background: accentColor,
-                  boxShadow: `0 14px 30px 1px ${accentColor}, 0 4px 12px ${accentColor}, 0 1px 7px ${accentColor}`,
-                }}
-              ></motion.div>
-            )}
-          </AnimatePresence>
-          <div className="absolute inset-0 w-full h-1/3 pointer-events-none bg-gradient-to-b from-gray-800 to-gray-900 transition-opacity opacity-0 group-focus:opacity-50 group-hover:opacity-30 z-[-1]"></div>
+          <div className="absolute inset-0 w-full h-1/3 pointer-events-none bg-gradient-to-b from-gray-800 to-gray-900 transition-opacity opacity-0 group-hover:opacity-30 z-[-1]"></div>
         </button>
       )}
     </Tab>
