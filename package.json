@@ -9,14 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.0",
+    "classcat": "^5.0.3",
+    "framer-motion": "^4.1.17",
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-tsparticles": "^1.33.1"
   },
   "devDependencies": {
     "@types/react": "17.0.15",
+    "autoprefixer": "^10.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7",
     "typescript": "4.3.5"
   }
 }
