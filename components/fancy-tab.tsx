@@ -1,5 +1,4 @@
 import { Tab } from "@headlessui/react";
-import cc from "classcat";
 import { AnimatePresence, motion } from "framer-motion";
 import Particles from "react-tsparticles";
 
@@ -13,12 +12,7 @@ export function FancyTab({ children, id, accentColor }: FancyTabProps) {
   return (
     <Tab as="div" className="w-full focus:outline-none group">
       {({ selected }) => (
-        <button
-          className={cc([
-            "relative w-full py-4 text-white focus:outline-none uppercase text-lg w-full",
-            { "selected-tab": selected },
-          ])}
-        >
+        <button className="relative w-full py-4 text-white focus:outline-none uppercase text-lg w-full">
           {children}
           {selected && (
             <motion.div
